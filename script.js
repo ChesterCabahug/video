@@ -10,6 +10,11 @@ const duration = document.querySelector(".time-duration")
 const fullscreenBtn = document.querySelector(".fullscreen")
 
 // Play & Pause ----------------------------------- //
+showPlayIcon = () => {
+    playBtn.classList.replace("fa-pause", "fa-play")
+    playBtn.setAttribute("title", "Play")
+}
+
 togglePlay = () => {
     if(video.paused) {
         video.play()
@@ -17,10 +22,12 @@ togglePlay = () => {
         playBtn.setAttribute("title", "Pause")
     } else {
         video.pause()
-        playBtn.classList.replace("fa-pause", "fa-play")
-        playBtn.setAttribute("title", "Play")
+        showPlayIcon()
     }
 }
+
+// on video end, show play button
+video.addEventListener("ended", showPlayIcon)
 
 
 // Progress Bar ---------------------------------- //
