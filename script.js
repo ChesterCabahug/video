@@ -13,8 +13,12 @@ const fullscreenBtn = document.querySelector(".fullscreen")
 togglePlay = () => {
     if(video.paused) {
         video.play()
+        playBtn.classList.replace("fa-play", "fa-pause")
+        playBtn.setAttribute("title", "Pause")
     } else {
         video.pause()
+        playBtn.classList.replace("fa-pause", "fa-play")
+        playBtn.setAttribute("title", "Play")
     }
 }
 
