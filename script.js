@@ -107,8 +107,7 @@ toggleMute = () => {
 // Change Playback Speed -------------------- //
 
 changeSpeed = () => {
-    console.log("video playback width", video.playbackRate)
-    console.log("selected value", speed.value);
+    video.playbackRate = speed.value
 }
 
 
