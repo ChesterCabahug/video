@@ -52,7 +52,6 @@ setProgress = (e) => {
     const newTime = e.offsetX / progressRange.offsetWidth
     progressBar.style.width = `${newTime * 100}%`
     video.currentTime = newTime * video.duration
-    console.log(newTime)
 }
 
 // Volume Controls --------------------------- //
@@ -72,7 +71,6 @@ changeVolume = (e) => {
 
     volumeBar.style.width = `${volume * 100}%`
     video.volume = volume
-    console.log(volume)
 
     // change icon depending to volume 
     volumeIcon.className = ""
