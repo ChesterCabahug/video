@@ -126,6 +126,8 @@ function openFullscreen(elem) {
     } else if (elem.msRequestFullscreen) { /* IE/Edge */
       elem.msRequestFullscreen();
     }
+    video.classList.add("video-fullscreen")
+    
   }
   
   /* Close fullscreen */
@@ -139,6 +141,7 @@ function openFullscreen(elem) {
     } else if (document.msExitFullscreen) { /* IE/Edge */
       document.msExitFullscreen();
     }
+    video.classList.remove("video-fullscreen")
   }
 
 
