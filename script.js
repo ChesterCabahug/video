@@ -1,3 +1,4 @@
+const player = document.querySelector(".player")
 const video = document.querySelector("video")
 const progressRange = document.querySelector(".progress-range")
 const progressBar = document.querySelector(".progress-bar")
@@ -115,7 +116,7 @@ changeSpeed = () => {
 // Fullscreen ------------------------------- //
 
 /* View in fullscreen */
-function openFullscreen() {
+function openFullscreen(elem) {
     if (elem.requestFullscreen) {
       elem.requestFullscreen();
     } else if (elem.mozRequestFullScreen) { /* Firefox */
@@ -141,7 +142,17 @@ function openFullscreen() {
   }
 
 
+let fullscreen = false
 
+// toggle full screen
+toggleFullscreen = () => {
+    if (!fullscreen) {
+        openFullscreen(player)
+    } else {
+        closeFullscreen()
+    }
+    fullscreen = !fullscreen
+}
 
 // event listeners
 playBtn.addEventListener("click", togglePlay)
@@ -152,3 +163,4 @@ progressRange.addEventListener("click", setProgress)
 volumeRange.addEventListener("click", changeVolume)
 volumeIcon.addEventListener("click", toggleMute)
 speed.addEventListener("change", changeSpeed)
+fullscreenBtn.addEventListener("click", toggleFullscreen)
