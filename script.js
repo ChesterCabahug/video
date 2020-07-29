@@ -88,13 +88,19 @@ changeVolume = (e) => {
 
 // mute / unmute
 toggleMute = () => {
+    volumeIcon.className = ""
+
     if (video.volume) {
         lastVolume = video.volume
         video.volume = 0
         volumeBar.style.width = 0
+        volumeIcon.classList.add("fas", "fa-volume-mute")
+        volumeIcon.setAttribute("title", "Unmute")
     } else {
         video.volume = lastVolume
         volumeBar.style.width = `${lastVolume * 100}%`
+        volumeIcon.classList.add("fas", "fa-volume-up")
+        volumeIcon.setAttribute("title", "Mute")
     }
 }
 
